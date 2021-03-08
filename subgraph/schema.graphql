@@ -1,0 +1,33 @@
+type Task @entity {
+  id: ID!
+  name: String!
+  dueDate: BigInt!
+  exists: Boolean!
+  priority: Priority!
+  appAddress: Bytes!
+}
+
+enum Priority {
+  Low
+  Medium
+  High
+}
+
+type User @entity {
+  id: ID!
+  tasks: [UserTask!] @derivedfrom(field:"user")
+  useraddress: Bytes!
+  appAddress: Bytes!
+}
+
+type UserTask @entity {
+  id: ID!
+  user: User!
+  task: Task!
+}
+
+type AragonInfo @entity {
+  id: ID!
+  orgs: [Bytes!]!
+  apps: [Bytes!]!
+}

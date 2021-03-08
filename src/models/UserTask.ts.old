@@ -1,0 +1,13 @@
+import { UserTaskData } from '../types'
+
+export default class UserTask {
+  readonly id: string
+  readonly userId: string
+  readonly taskId: string
+
+  constructor(data: UserTaskData) {
+    this.id = data.id
+    this.userId = data.userId
+    this.taskId = data.taskId
+  }
+}
