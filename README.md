@@ -1,15 +1,15 @@
-# The Graph Connector for Round Robin
+# The Graph Connector for Todo App
 
-Connector for the Task Allocation Round Robin model prototype.
+Connector for the decentralized TodoApp.
 
 ## Usage
 
 ```js
   const org = await connect(ORG_ADDRESS, 'thegraph', { network: 4 })
 
-  const roundRobinApp = await org.app('ta-round-robin')
+  const todoApp = await org.app('todoapp')
 
-  const roundRobinConnector = await createAppConnector(roundRobinApp)
+  const todoAppConnector = await createAppConnector(todoApp)
 
-  const proposals = await roundRobinConnector.tasksForUser(<userId>, <status>, { first: <first>, skip: <skip> })
+  const proposals = await todoAppConnector.tasksForUser(<userId>, <status>, { first: <first>, skip: <skip> })
 ```
